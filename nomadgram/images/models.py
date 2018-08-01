@@ -13,7 +13,7 @@ class TimeStampedModel(models.Model):
 
 
 class Image(TimeStampedModel):
-    
+
     file = models.ImageField()
     locations = models.CharField(max_length=140)
     caption = models.TextField()
