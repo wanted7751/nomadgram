@@ -17,17 +17,17 @@ class Image(TimeStampedModel):
     file = models.ImageField()
     locations = models.CharField(max_length=140)
     caption = models.TextField()
-    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True,  related_name='images')
+    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True)
 
 
 class Comment(TimeStampedModel):
 
     message = models.TextField()
-    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True,  related_name='comments')
-    image = models.ForeignKey(Image, on_delete=models.CASCADE, null=True, related_name='comments')
+    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, null=True)
 
 
 class Like(TimeStampedModel):
 
-    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True, related_name='likes')
-    image = models.ForeignKey(Image, on_delete=models.CASCADE, null=True, related_name='likes')
+    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, null=True)
