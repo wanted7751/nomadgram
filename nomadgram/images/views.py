@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from . import models, serializers
 from rest_framework.response import Response
+from rest_framework import status
+
 
 # Create your views here.
 
@@ -32,11 +34,27 @@ class Feed(APIView):
 
         return Response(serialzer.data)
 
-    
+ 
 class LikeImage(APIView):
     
     def get(self, request, image_id, format=None):
+        
+        user = request.user
 
-        print(image_id)
-    
+        try:
+            found_image = models.Image.objects.get(id=image_id)
+        except models.Image.DoesNotExist:
+            return Response(status=404)
+        
+        new_like = models.Like.objects.create(
+            creator=user,
+            image=found_image
+
+        )
+
+        new_like.save()
+
         return Response(status=200)
+
+
+        
