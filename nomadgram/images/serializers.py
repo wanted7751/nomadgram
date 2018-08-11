@@ -9,14 +9,14 @@ class FeedUserSerializer(serializers.ModelSerializer):
         model = user_models.User
         fields = (
             'username',
-            'profile_image',
+            'profile_image'
 
         )
 
 class CommentSerializer(serializers.ModelSerializer):
 
 
-    creator = FeedUserSerializer()
+    creator = FeedUserSerializer(read_only=True)
 
     #image = ImageSerializer()
 
