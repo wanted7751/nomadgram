@@ -126,4 +126,10 @@ class Comment(APIView):
 
 
 
-            
+class Search(APIView):
+
+    def get(self, request, format=None):
+
+      hashtags = request.query_params.get('hashtags', None)
+
+      print(hashtags)
