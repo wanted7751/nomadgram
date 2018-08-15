@@ -21,11 +21,6 @@ urlpatterns = [
         name='unfollow_user'
     ),
     url(
-        regex=r'^(?P<username>\w+)/$',
-        view=views.UserProfile.as_view(),
-        name='user_profile'
-    ),
-    url(
         regex=r'^(?P<username>\w+)/followers/$',
         view=views.UserFollowers.as_view(),
         name='user_followers'
@@ -34,5 +29,16 @@ urlpatterns = [
         regex=r'^(?P<username>\w+)/following/$',
         view=views.UserFollowing.as_view(),
         name='user_following'
-    )
+    ),
+    url(
+        regex=r'^search/$',
+        view=views.Search.as_view(),
+        name='user_following'
+    ),
+    #search가 이름이 될 수 있으니 users/search 와 users/username url의 순서를 바꿔줌.
+    url(
+        regex=r'^(?P<username>\w+)/$',
+        view=views.UserProfile.as_view(),
+        name='user_profile'
+    ),
 ]
