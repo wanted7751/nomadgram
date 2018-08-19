@@ -4,10 +4,11 @@ from nomadgram.users import models as user_models
 from nomadgram.images import models as image_models
 
 
-class Notifications(image_models.TimeStampedModel):
+@python_2_unicode_compatible
+class Notification(image_models.TimeStampedModel):
 
     TYPE_CHOICES = (
-        ('like','Like'),
+        ('like', 'Like'),
         ('comment', 'Comment'),
         ('follow', 'Follow')
     )
@@ -16,5 +17,4 @@ class Notifications(image_models.TimeStampedModel):
     to = models.ForeignKey(user_models.User, on_delete=models.CASCADE, related_name='to')
     notification_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
     image = models.ForeignKey(image_models.Image, null=True, blank=True, on_delete=models.CASCADE, related_name='image')
-
-
+    comment = models.TextField(null=True, blank=True)

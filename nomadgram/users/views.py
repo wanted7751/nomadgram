@@ -21,6 +21,8 @@ class FollowUser(APIView):
 
         user = request.user
 
+        # follow notification
+
         try:
             user_to_follow = models.User.objects.get(id=user_id)
         except models.User.DoesNotExist:

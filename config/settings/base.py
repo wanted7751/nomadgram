@@ -75,7 +75,7 @@ LOCAL_APPS = [
     # Your stuff: custom apps go here
     'nomadgram.images.apps.ImagesConfig',
     'nomadgram.notifications.apps.NotificationsConfig'  
-    # notifications app
+        # notifications app
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
