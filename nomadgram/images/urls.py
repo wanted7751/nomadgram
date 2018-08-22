@@ -7,8 +7,13 @@ from django.conf.urls import url
 app_name = "images"
 urlpatterns = [
     url(
-        regex=r'^all/$',
+        regex=r'^$',
         view=views.Feed.as_view(),
+        name='feed'
+    ),
+    url(
+        regex=r'^(?P<image_id>[0-9]+)/$',
+        view=views.ImageDetail.as_view(),
         name='feed'
     ),
     url(
