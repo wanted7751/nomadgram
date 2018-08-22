@@ -26,15 +26,19 @@ class CountImageSerializer(serializers.ModelSerializer):
 
         )
 
-
 class FeedUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = user_models.User
         fields = (
+            'profile_image',
             'username',
-            'profile_image'
-
+            'name',
+            'bio',
+            'website',
+            'post_count',
+            'followers_count',
+            'following_count'
         )
 
 class CommentSerializer(serializers.ModelSerializer):
