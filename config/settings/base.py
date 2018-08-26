@@ -67,6 +67,7 @@ THIRD_PARTY_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
     'rest_framework', #Rest Framework
     'taggit', #Tags for the photos
     'taggit_serializer', #tag serializer
