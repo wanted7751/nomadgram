@@ -5,6 +5,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token
+from nomadgram import views
+from django.conf.urls import url
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
@@ -31,6 +33,9 @@ urlpatterns = [
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
+urlpatterns += [
+    url(r'^', views.ReactAppView.as_view()),
+]
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

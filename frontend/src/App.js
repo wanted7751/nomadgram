@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import styles from './App.scss';
 
+
 class App extends Component {
   render() {
     return (
@@ -11,7 +12,7 @@ class App extends Component {
           <h1 className={styleMedia.App__title}>Welcome to React</h1>
         </header>
         <p className={styles.App__intro}>
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Park min ho
         </p>
       </div>
     );
