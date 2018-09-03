@@ -7,7 +7,7 @@ from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token
 from nomadgram import views
 from django.conf.urls import url
-
+#연습
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
