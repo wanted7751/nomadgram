@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 
 
+//store.dispatch({ type: "bullshit"});
+
 ReactDOM.render(
 
     <Provider store={store}>
