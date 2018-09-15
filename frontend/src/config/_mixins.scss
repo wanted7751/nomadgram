@@ -4,7 +4,7 @@ $xl-desktop-width: 1351px;
 $phone-width: 320px;
 $iphone6-width: 375px;
 $iphone6plus-width: 450px;
-
+// 3-28 push 잘못되서 다시
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == "tablet" {
     @media (min-width: #{$iphone6plus-width}) and (max-width: #{$desktop-width}) {
