@@ -9,7 +9,7 @@ const SignupForm = props => (
       Sign up to see photos and videos from your friends.
     </h3>
     <button className={formStyles.button}>
-      <Ionicon icon="logo-facebook" fontSize="20px" color="white" /> Log in with
+      <Ionicon icon="logo-facebook" fontSize="20px" color="white" />  Log in with
       Facebook
     </button>
     <span className={formStyles.divider}>or</span>
