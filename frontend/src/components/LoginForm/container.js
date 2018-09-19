@@ -1,39 +1,38 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LoginForm from "./presenter";
 
 class Container extends Component {
     state = {
-        username:"",
-        password:"",
+        username: "",
+        password: ""
     };
     static propTypes = {
-        facebookLogin:PropTypes.func.isRequired
+        facebookLogin: PropTypes.func.isRequired
     };
-    render(){
-         const {username, password} = this.state;
+    render() {
+        const { username, password } = this.state;
         return (
-        <LoginForm
-            handleInputChange={this._handleInputChange}
-            handleSubmit={this._handleSubmit}
-            handleFacebookLogin={this._handleFacebookLogin}
-            usernameValue={username}
-            passwordValue={password}
-        />
-     );
+            <LoginForm
+                handleInputChange={this._handleInputChange}
+                handleSubmit={this._handleSubmit}
+                usernameValue={username}
+                passwordValue={password}
+                handleFacebookLogin={this._handleFacebookLogin}
+            />
+        );
     }
     _handleInputChange = event => {
-        const {target : {value, name}} = event;
+        const { target: { value, name } } = event;
         this.setState({
             [name]: value
         });
     };
     _handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
     };
     _handleFacebookLogin = response => {
-        const{facebookLogin} = this.props;
+        const { facebookLogin } = this.props;
         facebookLogin(response.accessToken);
     };
 }
