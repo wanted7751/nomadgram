@@ -12,13 +12,12 @@ import {translations} from "translations";
 //store.dispatch({ type: "bullshit"});
 
 ReactDOM.render(
-
-    <Provider store={store}>
+<Provider store={store}>
+    <I18n translations={translations} initialLang="en" fallbackLang="en">
         <ConnectedRouter history={history}>
-            <I18n translations={translations} initialLang="en" fallbackLang="en">
-                <App />
-            </I18n>
-        </ConnectedRouter>
-    </Provider>,
+                 <App />
+        </ConnectedRouter>                 
+    </I18n>
+</Provider>,
     document.getElementById('root'));
     
