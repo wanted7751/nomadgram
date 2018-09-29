@@ -18,7 +18,7 @@
       border: 1px solid #efefef;
       border-radius: 3px;
       background-color: $bg-color;
-      margin-bottom: 5px;
+      margin-bottom: 7px;
       font-size: $normal-font-size;
       padding: 9px 0 7px 8px;
       font-weight: 400;
@@ -67,19 +67,21 @@
     }
   }
   .facebook-link {
+    align-items: center;
     color: #385185;
     justify-content: center;
     margin-bottom: 25px;
     cursor: pointer;
-    border:0;
-    background-color:white;
-    font-size:$normal-font-size;
-    svg {
+    background-color: white;
+    border: 0;
+    font-size: $normal-font-size;
+    text-align: center;
+    i {
       margin-right: 5px;
     }
     &:focus,
-    &:active{
-      outline:none;
+    &:active {
+      outline: none;
     }
   }
   .forgot-link {
