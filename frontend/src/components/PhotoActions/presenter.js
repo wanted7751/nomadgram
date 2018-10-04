@@ -14,7 +14,7 @@ const PhotoActions = (props, context) => (
     </div>
     <span>
       {props.number}{" "}
-      {props.number === 1 ? context.t("like") : context.t("likes")}
+      {props.number <= 1 ? context.t("like") : context.t("likes")}
       
     </span>
   </div>
