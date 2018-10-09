@@ -42,7 +42,7 @@ class Images(APIView):
 
         print(sorted_list)
 
-        serialzer = serializers.ImageSerializer(sorted_list, many=True)
+        serialzer = serializers.ImageSerializer(sorted_list, many=True, context={'request': request })
 
         return Response(serialzer.data)
 
@@ -243,7 +243,7 @@ class ImageDetail(APIView):
 
 
 
-        serializer = serializers.ImageSerializer(image)
+        serializer = serializers.ImageSerializer(image, context={'request': request})
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
