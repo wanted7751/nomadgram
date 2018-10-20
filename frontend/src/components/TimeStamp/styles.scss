@@ -1,0 +1,12 @@
+@import "../../config/_colors.scss";
+@import "../../config/_sizes.scss";
+@import "../../config/_variables.scss";
+@import "../../config/_mixins.scss";
+
+.time {
+  color: $dark-grey;
+  font-size: $small-font-size - 2;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
