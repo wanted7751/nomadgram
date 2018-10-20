@@ -109,7 +109,8 @@ class LikeImage(APIView):
             return Response(status=status.HTTP_201_CREATED)
 
 class UnLikeImage(APIView):
-    def post(self, request, image_id, format=None):
+
+    def delete(self, request, image_id, format=None):
 
         user = request.user
 
