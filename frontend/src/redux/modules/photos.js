@@ -31,14 +31,15 @@ function doUnlikePhoto(photoId) {
         photoId
     };
 }
-
 function addComment(photoId, comment) {
-    return {
-        type: ADD_COMMENT,
-        photoId,
-        comment
-    };
+  return {
+    type: ADD_COMMENT,
+    photoId,
+    comment
+  };
 }
+
+
 
 // API Actions
 
@@ -144,6 +145,12 @@ function commentPhoto(photoId, message){
         .then(response => {
             if(response.status === 401){
                 dispatch(userActions.logout());
+            }
+            return response.json()
+        })
+        .then(json => {
+            if(json.message){
+                dispatch(addComment(photoId, json));
             }
         })
     };
