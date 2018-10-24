@@ -24,7 +24,7 @@ const PhotoActions = (props, context) => (
   </div>
 );
 
-PhotoActions.propTypes = {
+PhotoActions.PropTypes = {
   number: PropTypes.number.isRequired,
   isLiked: PropTypes.bool.isRequired,
   photoId: PropTypes.number.isRequired,
