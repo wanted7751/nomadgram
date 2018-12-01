@@ -16,8 +16,10 @@ const UserRow = (props, context) => (
             </div>
         </div>
         <span className={styles.column}>
-            <button className={styles.button} onClick={props.handleClick}>
-                {props.user.following ? context.t("Unfollow") : context.t("Follow")}
+            <button className={styles.button} 
+            onClick={props.handleClick}>
+                {props.user.following ? 
+                    context.t("Unfollow") : context.t("Follow")}
             </button>
         </span>
     </div>
