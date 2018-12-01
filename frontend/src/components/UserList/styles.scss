@@ -3,7 +3,6 @@
 @import "../../config/_variables.scss";
 @import "../../config/_mixins.scss";
 
-
 .container {
   position: fixed;
   top: 0;
@@ -38,8 +37,8 @@
     .content {
       min-height: 300px;
       display: flex;
-      justify-content: center;
       align-items: flex-start;
+      flex-direction: column;
     }
   }
 }

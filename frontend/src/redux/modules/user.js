@@ -21,9 +21,10 @@ function logout(){
     }
 }
 
-function setUserList(usersList){
+function setUserList(userList){
     return{
-        type: SET_USER_LIST
+        type: SET_USER_LIST,
+        userList
         
     };
 }
