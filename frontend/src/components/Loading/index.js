@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.scss";
+
 const Loading = props => (
     <div className={styles.container}>
         <img
@@ -9,4 +10,5 @@ const Loading = props => (
         />
     </div>
 );
+
 export default Loading;
