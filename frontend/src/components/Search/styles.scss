@@ -4,7 +4,7 @@
 @import "../../config/_mixins.scss";
 
 .search {
-  display: flex;
+  display: grid;
   flex-direction: column;
   width: 100%;
   max-width: $max-page-width;
@@ -24,6 +24,12 @@
       width: 100%;
       display: block;
       font-weight: 600;
+    }
+    .content {
+      display: flex;
+      justify-content: flex-start;
+      //flex-start space-between
+      flex-wrap: wrap;
     }
   }
 }
