@@ -23,6 +23,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'website',
             'post_count',
             'followers_count',
+            'following_count',
             'images'
         )
 
