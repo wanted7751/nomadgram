@@ -192,7 +192,8 @@ class Search(APIView):
             images = models.Image.objects.filter(
                 tags__name__in=hashtags).distinct()
 
-            serializer = serializers.CountImageSerializer(images, many=True)
+            serializer = serializers.CountImageSerializer(
+                images, many=True, context={"request": request})
 
             return Response(data=serializer.data, status=status.HTTP_200_OK)
 
@@ -200,7 +201,8 @@ class Search(APIView):
             #해쉬태그가 없는 경우를 대비하여 수정하는 작업
             #react native 강의 4-23 부분에서 수정작업
             images = models.Image.objects.all()[:20]
-            serializer = serializers.CountImageSerializer(images, many=True)
+            serializer = serializers.CountImageSerializer(
+                images, many=True, context={"request": request})
             # return Response(status=status.HTTP_400_BAD_REQUEST)
             return Response(data=serializer.data, status=status.HTTP_200_OK)
             
