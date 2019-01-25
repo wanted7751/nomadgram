@@ -12,7 +12,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     post_count = serializers.ReadOnlyField()
     followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
-    it_self = serializers.SerializerMethodField()
+    is_self = serializers.SerializerMethodField()
     following = serializers.SerializerMethodField()
     
 
